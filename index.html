@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS Viva Revision</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7f8;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .category {
+      margin-bottom: 30px;
+    }
+    .category h2 {
+      background-color: #007acc;
+      color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .qa-list {
+      margin-top: 10px;
+      border-left: 3px solid #007acc;
+      padding-left: 15px;
+    }
+    .question {
+      padding: 8px 0;
+      cursor: pointer;
+      position: relative;
+    }
+    .question::before {
+      content: "▶";
+      position: absolute;
+      left: -20px;
+      transition: transform 0.2s;
+    }
+    .question.active::before {
+      transform: rotate(90deg);
+    }
+    .answer {
+      display: none;
+      padding: 5px 0 10px 20px;
+      color: #555;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CS Viva Revision</h1>
+    
+    <!-- Category: C Programming -->
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">C Programming</h2>
+      <div class="qa-list">
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is a pointer?</div>
+          <div class="answer">A variable that stores the address of another variable.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">Difference between structure and union?</div>
+          <div class="answer">Structure allocates separate memory for each member, union shares the same memory.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is recursion?</div>
+          <div class="answer">A function calling itself to solve smaller parts of a problem.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">Types of storage classes?</div>
+          <div class="answer">auto, static, register, extern.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">Use of malloc() and free()?</div>
+          <div class="answer">malloc() allocates memory dynamically; free() deallocates it.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">Function vs Macro?</div>
+          <div class="answer">Functions are compiled and executed; macros are pre-processed and replaced in code.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is a file in C?</div>
+          <div class="answer">A method to store data permanently using file operations like fopen() and fclose().</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category: DBMS -->
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">DBMS</h2>
+      <div class="qa-list">
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is a database?</div>
+          <div class="answer">An organized collection of related data.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is normalization?</div>
+          <div class="answer">The process to reduce redundancy and improve data integrity.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">Primary key vs Foreign key?</div>
+          <div class="answer">Primary key uniquely identifies a record; foreign key links records between tables.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is SQL?</div>
+          <div class="answer">A language to interact with and manipulate databases (e.g., SELECT, INSERT).</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">DBMS vs RDBMS?</div>
+          <div class="answer">RDBMS organizes data into tables with relationships, DBMS might not follow that structure.</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category: Networking -->
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Networking</h2>
+      <div class="qa-list">
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">Difference between LAN, MAN, and WAN?</div>
+          <div class="answer">LAN covers a local area, MAN a city, and WAN covers large geographic areas.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is an IP address?</div>
+          <div class="answer">A unique identifier for a device on a network.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is a router?</div>
+          <div class="answer">A device that forwards data between networks.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is topology?</div>
+          <div class="answer">The structure or layout of a network (e.g., star, bus, ring).</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is the function of a switch?</div>
+          <div class="answer">It connects devices in a network and forwards data intelligently.</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category: Web Technology -->
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Web Technology</h2>
+      <div class="qa-list">
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">HTML vs CSS?</div>
+          <div class="answer">HTML structures content; CSS styles it.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What are HTML tags?</div>
+          <div class="answer">They are instructions to the browser; examples: &lt;p&gt;, &lt;div&gt;.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is JavaScript used for?</div>
+          <div class="answer">To add interactivity to web pages.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What are events in JS?</div>
+          <div class="answer">User actions like clicks, hovers, and key presses that trigger code execution.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">Types of CSS inclusion?</div>
+          <div class="answer">Inline, internal, and external CSS.</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category: Object-Oriented Programming -->
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Object-Oriented Programming</h2>
+      <div class="qa-list">
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is a class and what is an object?</div>
+          <div class="answer">A class is a blueprint; an object is an instance of that class.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is inheritance?</div>
+          <div class="answer">It is a mechanism where one class acquires the properties of another.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is polymorphism?</div>
+          <div class="answer">The ability of one function or method to behave differently based on input.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What are main features of OOP?</div>
+          <div class="answer">Encapsulation, Inheritance, Polymorphism, and Abstraction.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">Procedural vs OOP?</div>
+          <div class="answer">Procedural is function-based; OOP is object-based, organizing code around objects.</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bonus Section -->
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Bonus Questions</h2>
+      <div class="qa-list">
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is SDLC?</div>
+          <div class="answer">Software Development Life Cycle – steps to build software.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is Cloud Computing?</div>
+          <div class="answer">Storing and accessing data over the internet instead of local systems.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is Big Data?</div>
+          <div class="answer">Extremely large and complex data sets that require advanced methods to analyze.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is AI?</div>
+          <div class="answer">Artificial Intelligence – machines simulating human intelligence.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is IoT?</div>
+          <div class="answer">Internet of Things – network of interconnected devices.</div>
+        </div>
+        <div class="qa">
+          <div class="question" onclick="toggleAnswer(this)">What is Cyber Security?</div>
+          <div class="answer">Protection of systems and data from digital attacks.</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <script>
+    // Toggle answer visibility
+    function toggleAnswer(element) {
+      element.classList.toggle('active');
+      var answer = element.nextElementSibling;
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+      } else {
+        answer.style.display = "block";
+      }
+    }
+    
+    // Toggle category visibility (for collapsing entire sections)
+    function toggleCategory(element) {
+      var qaList = element.nextElementSibling;
+      if (qaList.style.display === "none" || qaList.style.display === "") {
+        qaList.style.display = "block";
+      } else {
+        qaList.style.display = "none";
+      }
+    }
+    
+    // Initialize: collapse all categories except the first one
+    document.addEventListener('DOMContentLoaded', function() {
+      var categories = document.querySelectorAll('.qa-list');
+      categories.forEach(function(list, index) {
+        if (index !== 0) list.style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>
